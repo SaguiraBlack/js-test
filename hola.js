@@ -1,39 +1,41 @@
-'use-strcict';
+'use-strict';
 
-console.log("Elige una operación");
+alert("Calculadora sencilla");
+let numero1 = window.prompt("Ingresa un número");
+console.log(numero1);
+let numero2 = window.prompt("Ingresa otro número");
+console.log(numero2);
+
+
 console.log("1. Suma");
 console.log("2. Resta");
 console.log("3. Multiplicación");
 console.log("4. División");
 
-let opcion = 0;
 
-/* obtener numeros a partir del teclado */
+let opcion = prompt("Elige una operación");
+opcion = Number(opcion);
+let resultado;
+console.log(opcion);
+
 
 switch(opcion){
     case 1:
-        suma(num1,num2);
+        resultado = numero1+numero2;
         break;
     case 2:
+        resultado = numero1-numero2;
         break;
     case 3:
+        resultado = numero1*numero2;
         break;
     case 4:
-        break; 
+        resultado = numero1/numero2;
+        break;
 }
+console.log(resultado);
 
-let suma = (numero1, numero2)=>{
-    console.log(numero1+numero2); 
-}
+let imprimirResultado = alert("El resultado es: "+resultado);
 
-let resta = (numero1, numero2)=>{
-    console.log(numero1-numero2); 
-}
 
-let multiplicacion = (numero1, numero2)=>{
-    console.log(numero1+numero2); 
-}
 
-let division = (numero1, numero2)=>{
-    console.log(numero1+numero2); 
-}
