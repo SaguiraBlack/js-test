@@ -24,7 +24,7 @@ while(repeticion==1){
     console.log("4. División");
 
     /* Receiving the option to choose an operation with a prompt */
-    let opcion = prompt("Elige una operación");
+    let opcion = prompt("Elige una operación\n1. Suma\n2. Resta \n3.Multiplicación\n4.División");
     /* Parsing to number the option */
     opcion = Number(opcion);
     /* Initialized variable for the result */
@@ -55,7 +55,7 @@ while(repeticion==1){
     /* An alert showing the result */
     alert("El resultado es: "+resultado);
     /* Asking for repetition with a prompt */
-    repeticion = window.prompt("¿Deseas repetir? 1. Si   2. No");
+    repeticion = window.prompt("¿Deseas repetir?\n1. Si\n2. No");
     /* Parsing to number repeticion */
     repeticion = Number(repeticion);
 }
