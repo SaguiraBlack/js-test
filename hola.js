@@ -33,25 +33,13 @@ while(repeticion==1){
 
     /* Basic calcuator functions */
     /* Sum */
-    let suma = (numero1,numero2)=>{
-        resultado = numero1+numero2;
-        return resultado;
-    }
+    let suma = (numero1, numero2) => resultado = numero1 + numero2;
     /* Substraction */
-    let resta = (numero1,numero2)=>{
-        resultado = numero1-numero2;
-        return resultado;
-    }
+    let resta = (numero1, numero2) => resultado = numero1 - numero2;
     /* Multiplication */
-    let multiplicacion = (numero1,numero2)=>{
-        resultado = numero1*numero2;
-        return resultado;
-    }
+    let multiplicacion = (numero1, numero2) => resultado = numero1 * numero2;
     /* Division */
-    let division = (numero1,numero2)=>{
-        resultado = numero1/numero2;
-        return resultado;
-    }
+    let division = (numero1, numero2) => resultado = numero1 / numero2;
 
     /* A switch case to do de operation based on the chosen option */
     switch(opcion){
@@ -70,6 +58,9 @@ while(repeticion==1){
         case 4:
             /* Division */
             division(numero1,numero2);
+            break;
+        default:
+            alert("Opción no válida");
             break;
     }
     console.log(resultado);
