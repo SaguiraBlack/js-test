@@ -41,32 +41,41 @@ while(repeticion==1){
     /* Division */
     let division = (numero1, numero2) => resultado = numero1 / numero2;
 
+    function imprimirResultado(){
+        alert("El resultado es: "+resultado);
+        console.log(resultado);
+    }
+
     /* A switch case to do de operation based on the chosen option */
     switch(opcion){
         case 1:
             /* Sum */
             suma(numero1,numero2);
+            imprimirResultado();
             break;
         case 2:
             /* Substraction */
             resta(numero1,numero2);
+            imprimirResultado();
             break;
         case 3:
             /* Multiplication */
             multiplicacion(numero1,numero2);
+            imprimirResultado();
             break;
         case 4:
             /* Division */
             division(numero1,numero2);
+            imprimirResultado();
             break;
         default:
             alert("Opción no válida");
             break;
     }
-    console.log(resultado);
+    
 
     /* An alert showing the result */
-    alert("El resultado es: "+resultado);
+    
     /* Asking for repetition with a prompt */
     repeticion = window.prompt("¿Deseas repetir?\n1. Si\n2. No");
     /* Parsing to number repeticion */
