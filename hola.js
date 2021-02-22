@@ -41,6 +41,7 @@ while(repeticion==1){
     /* Division */
     let division = (numero1, numero2) => resultado = numero1 / numero2;
 
+    /* A function with an alert showing the result, in valid cases */
     function imprimirResultado(){
         alert("El resultado es: "+resultado);
         console.log(resultado);
@@ -72,9 +73,6 @@ while(repeticion==1){
             alert("Opción no válida");
             break;
     }
-    
-
-    /* An alert showing the result */
     
     /* Asking for repetition with a prompt */
     repeticion = window.prompt("¿Deseas repetir?\n1. Si\n2. No");
