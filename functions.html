@@ -9,8 +9,19 @@
 <body>
     <input type="text" id="circulo">
     <label>Ingresa el radio del círculo</label>
-     <button type="button"onclick="obtenerDatoArea()">Calcular área</button>
-     <button type="button"onclick="obtenerDatoPerimetro()">Calcular perímetro</button>
+    <button type="button" onclick="getCircleResults()">Calcular área y perímetro</button>
+    <br><br>
+    <input type="text" id="cuadrado">
+    <label>Ingresa el lado del cuadrado</label>
+    <button type="button" onclick="getSquareResults()">Calcular área y perímetro</button>
+    <br><br>
+    <input type="text" id="trianguloBase">
+    <label>Ingresa la base del tringulo equilátero</label>
+    <input type="text" id="trianguloAltura">
+    <label>Ingresa la altura del tringulo equilátero</label>
+    <button type="button" onclick="getTriangleResults()">Calcular área y perímetro</button>
+    <br><br>
+    <button type="button" onclick="limpiarCampos()">Limpiar</button>
 </body>
 <script src="functions.js"></script>
 </html>
