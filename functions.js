@@ -83,7 +83,7 @@ function validateValue(figureValue){
 let getString = (id) => document.getElementById(id).value;
 let cleanFields = (id) => document.getElementById(id).value = "";
 
-/* FUNCTIONS */
+/** FUNCTIONS **/
 /* Finding coincidences through the string */
 function recorrerStringCharacter(frase, character){
     let coincidences = 0;
@@ -127,19 +127,22 @@ function cleanFieldsFrase(){
     cleanFields("frase2");
 }
 
-/* convertir un decimal a binario y viceversa, validando que solo sean numeros */
-/*let aux = "";
+/*** CONVERTING A DECIMAL NUMBER INTO A BINARY NUMBER ***/
+/** Initializating variables **/
+let aux = "";
 
+/** FUNCTIONS **/
+/* Converting into binary getting the string and showing the result */
 function convertToBinary(){
     let decimalNumber = getString("decimal");
     if(validateDecimal(decimalNumber)){
         divideDecimal(decimalNumber);
-        let binaryNumber = aux;
-        //let binaryNumber = aux.reverse();
+        let binaryNumber = [...aux].reverse().join('');
         alert(`El número binario de ${decimalNumber} es: ${binaryNumber}`);
     }
 }
 
+/* Validate if the number is not negative */
 function validateDecimal(decimalNumber){
     if(decimalNumber < 0){
         alert(`No se puede usar números negativos`);
@@ -150,12 +153,13 @@ function validateDecimal(decimalNumber){
     }
 }
 
+/* Dividing the number to obteing the binary */
 function divideDecimal(decimalNumber){
     let int = parseInt(decimalNumber, 10);
     let residue = 0;
     while(int != 0){
         residue = int % 2;
-        int = int / 2;
+        int = parseInt((int / 2), 10);
         residue = residue.toString();
         aux = aux + residue;
         console.log(`Entero: ${int}`);
@@ -164,4 +168,15 @@ function divideDecimal(decimalNumber){
         console.log(`***************`);
     }
     return aux;
+}
+
+/* Clean the input */
+/*function cleanFieldsNumbers(){
+    cleanFields("decimal");
+}
+
+function changeColor(boton){
+    setTimeout(function(){ alert("Hello"); }, 3000);
+    boton.style.background = "#F7D358";
+    console.log(`Si sirvo`);
 }*/
