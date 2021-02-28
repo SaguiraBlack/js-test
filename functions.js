@@ -127,8 +127,41 @@ function cleanFieldsFrase(){
     cleanFields("frase2");
 }
 
+/* convertir un decimal a binario y viceversa, validando que solo sean numeros */
+/*let aux = "";
 
+function convertToBinary(){
+    let decimalNumber = getString("decimal");
+    if(validateDecimal(decimalNumber)){
+        divideDecimal(decimalNumber);
+        let binaryNumber = aux;
+        //let binaryNumber = aux.reverse();
+        alert(`El número binario de ${decimalNumber} es: ${binaryNumber}`);
+    }
+}
 
-/* encontrar las vocales de una frase */
+function validateDecimal(decimalNumber){
+    if(decimalNumber < 0){
+        alert(`No se puede usar números negativos`);
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 
-/* crud */
+function divideDecimal(decimalNumber){
+    let int = parseInt(decimalNumber, 10);
+    let residue = 0;
+    while(int != 0){
+        residue = int % 2;
+        int = int / 2;
+        residue = residue.toString();
+        aux = aux + residue;
+        console.log(`Entero: ${int}`);
+        console.log(`Residuo: ${residue}`);
+        console.log(`Aux: ${aux}`);
+        console.log(`***************`);
+    }
+    return aux;
+}*/
