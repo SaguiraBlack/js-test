@@ -15,8 +15,8 @@ let trianglePerimeter = 0;
 
 /* ARROW FUNCTIONS */
 /* Calculating areas and perimeters */
-let calculateCircleArea = (cicrcleRadius) => circleArea = pi * (cicrcleRadius ** 2);
-let calculateCirclePerimeter = (cicrcleRadius) => circlePerimeter = 2 * pi * cicrcleRadius;
+let calculateCircleArea = (cicrcleRadius) => pi * (cicrcleRadius ** 2);
+let calculateCirclePerimeter = (cicrcleRadius) => 2 * pi * cicrcleRadius;
 let calculateSquareArea = (squareSide) => squareArea = squareSide ** 2;
 let calculateSquarePerimeter = (squareSide) => squarePerimeter = 4 * squareSide;
 let calculateTriangleArea = (triangleBase) => triangleArea = (Math.sqrt(3) * (triangleBase ** 2) / 4);
@@ -25,13 +25,9 @@ let calculateTrianglePerimeter = (triangleBase) => trianglePerimeter = 3 * trian
 /* FUNCTIONS */
 /* Calculating and showing the area and perimeter of a circle */
 function getCircleResults(){
-    let cicrcleRadius = document.getElementById("circulo").value;
+    let cicrcleRadius = Number(document.getElementById("circulo").value);
     if(validateValue(cicrcleRadius)){
-        calculateCircleArea(cicrcleRadius);
-        calculateCirclePerimeter(cicrcleRadius);
-        circleArea = circleArea.toFixed(5);    
-        circlePerimeter = circlePerimeter.toFixed(5);
-        alert(`El área del círculo es ${circleArea}\nEl perímetro del círculo es ${circlePerimeter}`);
+        alert(`El área del círculo es ${calculateCircleArea(cicrcleRadius).toFixed(5)}\nEl perímetro del círculo es ${calculateCirclePerimeter(cicrcleRadius).toFixed(5)}`);
     }
 }
 
@@ -64,7 +60,7 @@ function cleanFieldsFigures(){
 
 /* A function to validate the value. Can't use negative numbers or an empty field */
 function validateValue(figureValue){
-    if(figureValue == 0){
+    if(figureValue === 0){
         alert(`El campo está vacío o ingresaste un 0`);
         return false;
     }
@@ -88,7 +84,7 @@ let cleanFields = (id) => document.getElementById(id).value = "";
 function recorrerStringCharacter(frase, character){
     let coincidences = 0;
     for(i = 0; i < frase.length; i++){
-        if(frase.charAt(i) == character){
+        if(frase.charAt(i) === character){
             coincidences++;
         }
     }
@@ -99,7 +95,7 @@ function recorrerStringCharacter(frase, character){
 function recorrerStringVowels(frase){
     let coincidences = 0;
     for(i = 0; i < frase.length; i++){
-        if(frase.charAt(i) == 'a' || frase.charAt(i) == 'e' || frase.charAt(i) == 'i' || frase.charAt(i) == 'o' || frase.charAt(i) == 'u'){
+        if(frase.charAt(i) === 'a' || frase.charAt(i) === 'e' || frase.charAt(i) === 'i' || frase.charAt(i) === 'o' || frase.charAt(i) === 'u'){
             coincidences++;
         }
     }
@@ -157,7 +153,7 @@ function validateDecimal(decimalNumber){
 function divideDecimal(decimalNumber){
     let int = parseInt(decimalNumber, 10);
     let residue = 0;
-    while(int != 0){
+    while(int !== 0){
         residue = int % 2;
         int = parseInt((int / 2), 10);
         residue = residue.toString();
@@ -171,7 +167,7 @@ function divideDecimal(decimalNumber){
 }
 
 /* Clean the input */
-/*function cleanFieldsNumbers(){
+function cleanFieldsNumbers(){
     cleanFields("decimal");
 }
 
@@ -179,4 +175,4 @@ function changeColor(boton){
     setTimeout(function(){ alert("Hello"); }, 3000);
     boton.style.background = "#F7D358";
     console.log(`Si sirvo`);
-}*/
+}
