@@ -1,5 +1,6 @@
 'use-strict'
 
+/*** CALCULATE AREAS AND PERIMETRES ****/
 const pi = Math.PI;
 /** Initializating variables **/
 /* Circle */
@@ -55,11 +56,10 @@ function getTriangleResults(){
 }
 
 /* A function to clean the inputs */
-function cleanFields(){
-    document.getElementById("circulo").value = "";
-    document.getElementById("cuadrado").value = "";
-    document.getElementById("trianguloBase").value = "";
-    document.getElementById("trianguloAltura").value = "";
+function cleanFieldsFigures(){
+    cleanFields("circulo");
+    cleanFields("cuadrado");
+    cleanFields("trianguloBase");
 }
 
 /* A function to validate the value. Can't use negative numbers or an empty field */
@@ -77,7 +77,57 @@ function validateValue(figureValue){
     }
 }
 
-/* encontrar coincidencias de una letra en una frase */
+/*** FINDING COINCIDENCES IN A PHRASE ***/
+/** ARROW FUNCTIONS **/
+/* Get string and clean fields. Clean fields is used for the figure inputs too */
+let getString = (id) => document.getElementById(id).value;
+let cleanFields = (id) => document.getElementById(id).value = "";
+
+/* FUNCTIONS */
+/* Finding coincidences through the string */
+function recorrerStringCharacter(frase, character){
+    let coincidences = 0;
+    for(i = 0; i < frase.length; i++){
+        if(frase.charAt(i) == character){
+            coincidences++;
+        }
+    }
+    return coincidences;
+}
+
+/* Finding vowels through the string */
+function recorrerStringVowels(frase){
+    let coincidences = 0;
+    for(i = 0; i < frase.length; i++){
+        if(frase.charAt(i) == 'a' || frase.charAt(i) == 'e' || frase.charAt(i) == 'i' || frase.charAt(i) == 'o' || frase.charAt(i) == 'u'){
+            coincidences++;
+        }
+    }
+    return coincidences;
+}
+
+/* Show the coincidences obtaining the string and the character */
+function findCoincidences(){
+    let character = getString("character");
+    let frase = getString("frase");
+    alert(`Las coincidencias de "${character}" son: ${recorrerStringCharacter(frase,character)}`);
+}
+
+/* Show the coincidences obtaining the string */
+function findVowels(){
+    let frase = getString("frase2");
+    frase = frase.toLowerCase();
+    alert(`Las vocales encontradas son: ${recorrerStringVowels(frase)}`);
+}
+
+/* A function to clean the inputs */
+function cleanFieldsFrase(){
+    cleanFields("frase");
+    cleanFields("character");
+    cleanFields("frase2");
+}
+
+
 
 /* encontrar las vocales de una frase */
 

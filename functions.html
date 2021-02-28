@@ -17,10 +17,22 @@
     <br><br>
     <input type="text" id="trianguloBase">
     <label>Ingresa la base del tringulo equilátero</label>
-
     <button type="button" onclick="getTriangleResults()">Calcular área y perímetro</button>
     <br><br>
-    <button type="button" onclick="cleanFields()">Limpiar</button>
+    <button type="button" onclick="cleanFieldsFigures()">Limpiar</button>
+    <br><br><br><br>
+    <input type="text" id="frase">
+    <label>Ingresa una frase o algo</label>
+    <br><br>
+    <input type="text" id="character" maxlength="1">
+    <label>Ingresa un caracter para buscar coincidencias</label>
+    <button type="button" onclick="findCoincidences()">Encontrar coincidencias</button>
+    <br><br>
+    <input type="text" id="frase2">
+    <label>Ingresa una frase o algo ahora para encontrar vocales</label>
+    <button type="button" onclick="findVowels()">Encontrar vocales</button>
+    <br><br>
+    <button type="button" onclick="cleanFieldsFrase()">Limpiar</button>
 </body>
 <script src="functions.js"></script>
 </html>
